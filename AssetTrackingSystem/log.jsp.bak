@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<META HTTP-EQUIV="Refresh" CONTENT="3">
+ <HEAD>
+  <TITLE>logout </TITLE>
+	<LINK rel="stylesheet" type="text/css" href="styl.css">
+ </HEAD>
+
+
+<body background="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\asset\log1.jpg" >
+<table align="right" width="75%" height="7%" border=0  cellspacing=0 >
+<tr>
+  <%@ page language="java" contentType="text/html" import="java.sql.*"%>
+  <%@ page import="java.util.*"%>
+  <%@ page import="java.uti.*"%>
+   <%! String uname,brn,reg,sql;
+	%>
+	<%	String action=request.getParameter("action");
+		try
+		{
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			Connection con=DriverManager.getConnection("jdbc:odbc:instrument");
+			Statement st=con.createStatement();
+			sql="select * from log where lstatus='yes'";
+			ResultSet rs=st.executeQuery(sql);
+			while(rs.next())
+
+			{
+				brn=rs.getString(4);
+				reg=rs.getString(5);
+						
+	%>
+	<td  width="300" align="center"><font color="#007D7D" size=3><h4>Welcome to <b> <% out.println(brn);%> </b>Branch</h4></font></td>
+	<%
+		
+		}
+		if(action.equals("logout"))
+		{
+			
+			sql="update log set lstatus='no' where branch='"+brn+"'";
+			st.executeUpdate(sql);
+			session.invalidate();
+			
+	%>
+	<jsp:forward page="rlogin.jsp"/>
+	<%
+			
+		}
+		}
+
+		catch(Exception ex)
+		{
+			System.out.println("Error"+ex);
+
+		}
+	%>
+	<td  width="100" align="right"><A class=link1  href="pass.html?action=password'" target=_top ><font class='dark'>Change&nbsp;Password</font></A></td>
+<td  width="100" align="center"><A class=link1  href='log.jsp?action=logout' target=_top><font class='dark'>SignOut&nbsp;</font></A></td>
+
+</tr>
+</table>
+<br><br>
+<% String log=(String)session.getAttribute("login");
+	if(log!=null)
+	{
+%>
+	<table border=0 align=right width="99%">
+	<tr>
+<td><b><font color=black face=Arial size=2>Date: </b></font><font color="#007D7D" size=3><b><%= new java.util.Date()%>
+</b></font>
+</b></td>
+<td><b><font color=black face=Arial size=2>Branch: </font><font color="#007D7D" size=3><% out.println(brn);%></font></b></td>
+<td><b><font color=black face=Arial size=2>Region: </font><font color="#007D7D" size=3><% out.println(reg);%></font></b></td>
+<td><b><font color=black face=Arial size=2>RegionOff: </font><font color="#007D7D" size=3><% out.println(reg);%></font></b></td>
+</tr>
+</table>
+ </BODY>
+</HTML>
+<% }
+	else
+	{
+		out.println("<html><body><center><h5> SESSION EXPIRED </h5></center></body></html>");
+	}
+%>

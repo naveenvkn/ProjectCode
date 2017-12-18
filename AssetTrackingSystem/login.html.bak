@@ -1,0 +1,37 @@
+<html>
+<head>
+<script language="JavaScript" >
+function check()
+{
+	var u=document.f.t1.value;
+	var p=document.f.t2.value;
+	if(u=="")
+	{
+		window.alert("Enter the user name");
+		return false;
+	}
+	if(p=="")
+	{
+		window.alert("Enter the password");
+		return false;
+	}
+	return true;
+		
+}
+</script>
+<title>Login</title></head><body background="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\asset\login.jpg" >
+<form action="login.jsp" method="get" name="f" onSubmit="return check()">
+<img src="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\asset\images\amaronlogo.jpg" width=200 height=50></img><center><font color="#416758" type="Verdana"><h1>Asset Tracking System</h1></font></center>
+<br><table align=center border=1 color=green width=400>
+<img align="center" border="0" src="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\asset\LOGIN1.gif" width="204" height="50"><font color="black" size=4 > </font>
+<tr><td>
+<center><font color="#669999" ><h3><b>Enter Username and Password</b></h3></font>
+<table align=center><tr><td><strong>Username:</strong></td><td><input type="text" name="t1" value=""></td></tr>
+<tr><td>       </td></tr>
+<tr><td><b>Password:</b></td><td><input type="password" name="t2" size="20" value=""></td></tr>
+<tr align="center"><center><td><input type=submit value="Login"  size="20" onClick="check()"></td></center>&nbsp;&nbsp;&nbsp
+<center><td><input type=reset value="Reset"></td></center>
+</tr></table>
+</form>
+</body>
+</html>

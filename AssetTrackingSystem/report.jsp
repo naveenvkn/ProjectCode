@@ -1,0 +1,235 @@
+<%@ page language="java" contentType="text/html" import="java.sql.*"%>
+<%@ page import="java.util.*"%>
+
+<html>
+<meta http-equiv="pragma" content="no-cache">
+<% String log=(String)session.getAttribute("login");
+	if(log!=null)
+	{
+%>
+ <HEAD>
+  <TITLE>report</TITLE>
+	<LINK rel="stylesheet" type="text/css" href="styl.css">
+ </HEAD>
+ 
+<body>
+
+<%@ include file="report.html"%>
+<%! String rad,imt,mno,mdate,ast,ides,imake,bran,sql,pstat,ecod,ename,mail,dept,role,cmp,type,del,bname;
+		int sno;
+%>
+<% rad=request.getParameter("r1");
+%>
+<%	
+
+		try
+		{
+
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			Connection con=DriverManager.getConnection("jdbc:odbc:instrument");
+			Statement st=con.createStatement();
+			ResultSet rs=st.executeQuery("select * from log where lstatus='yes'");
+			while(rs.next())
+			{
+				bname=rs.getString(4);
+			}
+			if(rad.equals("1"))
+			{
+%>
+<table align="center" border="0" width="90%">
+	<tr>
+		<th bgcolor="#79BCFF">Sno.</th>
+		<th bgcolor="#79BCFF">Imtno</th>
+		<th bgcolor="#79BCFF">Manf SNo</th>
+		<th bgcolor="#79BCFF">Asset Type</th>
+		<th bgcolor="#79BCFF">Instrument Desc</th>
+		<th bgcolor="#79BCFF">Instrment Make</th>
+		<th bgcolor="#79BCFF">Manf Date</th>
+		<th bgcolor="#79BCFF">BranchRecdOn</th>
+
+	</tr>
+	<%
+				sql="select * from instrument where bname='"+bname+"'";
+				rs=st.executeQuery(sql);
+				while(rs.next())
+				{
+					sno=rs.getInt(1);
+					imt=rs.getString(2);
+					mno=rs.getString(3);
+					ast=rs.getString(4);
+					ides=rs.getString(5);
+					imake=rs.getString(6);
+					mdate=rs.getString(7);
+					bran=rs.getString(8);
+%>
+	
+	<tr>
+		<td bgcolor="#CCCCCC">	<% out.println(sno);%></td>
+		<td bgcolor="#CCCCCC">	<% out.println(imt); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(mno); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(ast); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(ides); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(imake); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(mdate); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(bran); %></td>
+	</tr>
+	<% }
+	%>
+	</table>
+	<%
+					
+		}
+		else if(rad.equals("2"))
+		{
+	%>
+<table align="center" border="0" width="40%">
+	<tr>
+		<th bgcolor="#79BCFF">Asset Type</th>
+	</tr>
+	<tr><td align="center">BETA METER</td></tr>
+	<tr><td align="center">BETA TESTER</td></tr>
+	<tr><td align="center">CABLES</td></tr>
+	<tr><td align="center">CAMERA</td></tr>
+	<tr><td align="center">DIGITAL CLAMP METER</td></tr>
+	<tr><td align="center">DIGITAL MULTI METER</td></tr>
+	<tr><td align="center">DVD</td></tr>
+	<tr><td align="center">LOAD BANK</td></tr>
+	<tr><td align="center">SHUNT</td></tr>
+	<tr><td align="center">TEST ASSET</td></tr>
+	<tr><td align="center">SOUND LEVEL METER</td></tr>
+</table>
+<%	}
+	else if(rad.equals("3"))
+	{
+%>
+ <table align="center" border="0" width="90%">
+	<tr>
+		<th bgcolor="#79BCFF">Sno.</th>
+		<th bgcolor="#79BCFF">Imtno</th>
+		<th bgcolor="#79BCFF">Manf SNo</th>
+		<th bgcolor="#79BCFF">Asset Type</th>
+		<th bgcolor="#79BCFF">Instrument Desc</th>
+		<th bgcolor="#79BCFF">Instrment Make</th>
+		<th bgcolor="#79BCFF">Manf Date</th>
+		<th bgcolor="#79BCFF">pstatus</th>
+
+	</tr>
+	<% sql="select * from Asthistory where branch='"+bname+"' and status='allot'";
+			rs=st.executeQuery(sql);
+			while(rs.next())
+
+			{
+
+				sno=rs.getInt(1);
+				imt=rs.getString(2);
+				mno=rs.getString(3);
+				ast=rs.getString(4);
+				ides=rs.getString(5);
+				imake=rs.getString(6);
+				mdate=rs.getString(7);
+				pstat=rs.getString(19);
+	%>
+	<tr>
+		<td bgcolor="#CCCCCC">	<% out.println(sno);%></td>
+		<td bgcolor="#CCCCCC">	<% out.println(imt); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(mno); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(ast); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(ides); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(imake); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(mdate); %></td>
+		<td bgcolor="#CCCCCC">	<% out.println(pstat); %></td>
+		
+	</tr>
+	<% }
+	%>
+	</table>
+	<%		
+			
+		}
+		else if(rad.equals("4"))
+		{
+	%>
+	<table align="center" border="0" width="90%">
+	<tr>
+		<th bgcolor="#79BCFF">Sno.</th>
+		<th bgcolor="#79BCFF">Emp_Code</th>
+		<th bgcolor="#79BCFF">Emp_Name</th>
+		<th bgcolor="#79BCFF">Emp_Mail</th>
+		<th bgcolor="#79BCFF">Department_Name</th>
+		<th bgcolor="#79BCFF">Role</th>
+		<th bgcolor="#79BCFF">Company</th>
+		<th bgcolor="#79BCFF">Type</th>
+
+	</tr>
+	<%
+	sql="select * from employee where branchname='"+bname+"'";
+			rs=st.executeQuery(sql);
+			while(rs.next())
+
+			{
+				sno=rs.getInt(1);
+				ecod=rs.getString(2);
+				ename=rs.getString(3);
+				mail=rs.getString(4);
+				dept=rs.getString(5);
+				role=rs.getString(6);
+				cmp=rs.getString(7);
+				type=rs.getString(8);
+				
+	%>
+	
+	<tr>
+		<td>	<% out.println(sno); %></td>
+		<td>	<% out.println(ecod);%></td>
+		<td>	<% out.println(ename); %></td>
+		<td>	<% out.println(mail); %></td>
+		<td>	<% out.println(dept); %></td>
+		<td>	<% out.println(role); %></td>
+		<td>	<% out.println(cmp); %></td>
+		<td>	<% out.println(type); %></td>
+		
+	</tr>
+	<% }
+	%>
+	</table>
+	<%	}
+		else if(rad.equals("5"))
+		{
+	%>
+	<table align="center" border="0" width="20%">
+	<tr>
+		<th bgcolor="#79BCFF">Instrument Make</th>
+	</tr>
+	<% sql="select distinct imake from instrument where bname='"+bname+"'";
+		rs=st.executeQuery(sql);
+		while(rs.next())
+		{
+			imake=rs.getString(1);
+	%>
+	<tr><td bgcolor="#A2CEC5" align="center"><% out.println(imake); %></td>
+	</tr></table>
+	<%		}
+		}
+		else if(rad.equals("6"))
+		{
+	%>
+	<jsp:forward page="rep.html"/>
+	
+	<%		
+		}
+		}
+
+		catch(Exception ex)
+		{
+			System.out.println("Error"+ex);
+
+		}
+	%>
+</body>
+</html>
+<% }
+	else
+	{
+		out.println("<html><body><center><h5> SESSION EXPIRED </h5></center></body></html>");
+	}
+%>

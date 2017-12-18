@@ -1,0 +1,23 @@
+a.link1
+{
+	color: black;
+	font-family: arial;
+	font-size:11pt;
+	text-decoration:none;
+}
+FONT.dark
+{
+    BACKGROUND-COLOR: lightgreen;
+    COLOR: olive;
+    FONT-FAMILY: Cursive;
+    FONT-SIZE: 11pt;
+    FONT-WEIGHT :BOLD;
+ }
+FONT.dark1
+{
+    BACKGROUND-COLOR: #B59A93;
+    COLOR: blue;
+    FONT-FAMILY: verdena;
+    FONT-SIZE: 11pt;
+    FONT-WEIGHT :BOLD;
+ }

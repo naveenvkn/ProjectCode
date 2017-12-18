@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Change Allocation</title>
+</head>
+<body background="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\asset\ma.jpg" >
+<form name=fin action="calloc.jsp" method="get">
+
+
+
+
+
+	<br><br>
+
+<table border=0 width="100%">
+<th><table border=0 width="200%" align="center">
+
+<tr>
+<td align=middle bgColor="#006262" height=103 
+    style="WIDTH: 100%; HEIGHT: 30px" vAlign=center width="100%">
+	<b><font color=white face=Arial size=4>Change Allocation</font></b></td></tr>
+</table></th>
+<tr>
+<td>
+<table align="top" border=0 width="70%" bgcolor="#BAE9E7">
+<tr><td><b><center><h3>Calibration Details</h3></center></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>EmpCode. </font></td><td><input type="text" name="ecod1" /></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>EmpName </font></td><td><input type="text" name="ename1" /></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>EmpType </font></td><td><input type="text" name="type1" /></b></td></tr>
+<tr><td height=40><b><font color=black face=Arial size=2>EmpMail  </font></td><td><input type="text" name="mail1" /></b></td>
+</tr>
+<tr><td height=40><b><font color=black face=Arial size=2>Next CalibDate  </font></td><td><input type="text" name="ncal1" /></b></td>
+</tr>
+<tr><td height=40><b><font color=black face=Arial size=2>Last CalibDate </font></td><td><input type="text" name="lcal1" /></b></td>
+</tr>
+<tr><td height=40><b><font color=black face=Arial size=2>LastCalibStkerColor </font></td><td>
+<select name="col1">
+			<option value="Red" selected>Red
+			<option value="Green">Green
+			<option value="Yellow">Yellow
+			
+	</select></b></td>
+</tr>
+
+<tr><td height=40><b><font color=black face=Arial size=2>AssetIssuedDate </font></td><td><input type="text" name="adate1" /></b></td>
+</tr>
+
+</table>
+</td>
+<td>
+<table border=0 width="70%" bgcolor="#BAE9E7"align="right">
+<tr><td><b><center><h3>Instrument Details</h3></center></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Manf SNo. </font></td><td><input type="text" name="mno" /></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Instruent.Desc </font></td><td><textarea name="des" rows="2" cols="20"></textarea></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>IMTENo. </font></td><td><input type="text" name="imt" /></b></td></tr>
+<tr><td height=40><b><font color=black face=Arial size=2>Asset Type : </font></td><td>
+<select name="ast">
+			<option value="BETA METER" selected>BETA METER
+			<option value="BETA TESTER">BETA TESTER
+			<option value="CABLES">CABLES
+			<option value="CAMERA">CAMERA
+			<option value="DIGITAL CLAMP METER ">DIGITAL CLAMP METER
+			<option value="DIGITAL MULTI METER">DIGITAL MULTI METER
+			<option value="DVD">DVD
+			<option value="LOAD BANK">LOAD BANK
+			<option value="SHUNT">SHUNT
+			<option value="TEST ASSET">TEST ASSET
+			<option value="SOUND LEVEL METER">SOUND LEVEL METER
+	</select></b></td>
+</tr>
+
+<tr><td height=40><b><font color=black face=Arial size=2>Instru.Make :  </font></td><td><input type="text" name="make" /></b></td>
+</tr>
+
+<tr><td height=40><b><font color=black face=Arial size=2>Manf   Date :</font></td><td><input type="text" name="mdate" /></b></td>
+</tr>
+<tr><td height=40><b><font color=black face=Arial size=2>Resolution  :</font></td><td><input type="text" name="res" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>BranchRecAssetOn </font></td><td><input type="text" name="brn" /></b></td></tr>
+
+</table>
+</td>
+
+</table>
+<table border=0 width="50%" align="left">
+<tr>
+<td><input type="submit" name="save" value="             Save     "/></b></td>
+<td height=40><input type="reset" name="clear" value="             Clear     "/></b></td>
+</tr>
+</table>
+<table align="right" border=0 width="39.5%" bgcolor="#BAE9E7">
+<tr><td><b><center><h3>Last updated Calibration Details</h3></center></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>EmpCode. </font></td><td><input type="text" name="ecod" /></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>EmpName </font></td><td><input type="text" name="ename" /></b></td></tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>EmpType </font></td><td><input type="text" name="type" /></b></td></tr>
+<tr><td height=40><b><font color=black face=Arial size=2>EmpMail  </font></td><td><input type="text" name="mail" /></b></td>
+</tr>
+<tr><td height=40><b><font color=black face=Arial size=2>Next CalibDate  </font></td><td><input type="text" name="ncal" /></b></td>
+</tr>
+<tr><td height=40><b><font color=black face=Arial size=2>Last CalibDate </font></td><td><input type="text" name="lcal" /></b></td>
+</tr>
+<tr><td height=40><b><font color=black face=Arial size=2>LastCalibStkerColor </font></td><td>
+<select name="col">
+			<option value="Red" selected>Red
+			<option value="Green">Green
+			<option value="Yellow">Yellow
+			
+	</select></b></td>
+</tr>
+
+<tr><td height=40><b><font color=black face=Arial size=2>AssetIssuedDate </font></td><td><input type="text" name="adate" /></b></td>
+</tr>
+
+</table>
+</p>
+
+</form>
+</body>
+</html>

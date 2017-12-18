@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Employee Master</title>
+<script Language="JavaScript">
+function check()
+{
+	var i1=document.fin1.ecod.value;
+	var i2=document.fin1.ename.value;
+	var i3=document.fin1.dept.value;
+	var i4=document.fin1.role.value;
+	var m1=document.fin1.mail.value;
+	var m2=document.fin1.rmail.value;
+	for (var i =0; i < fin1.elements.length; i++) 
+          {
+            if (fin1.elements[i].value == "") 
+             {
+                 alert("Please Enter the values of All fields.");
+                 return false;
+             }
+          }   
+	if (i1=="")
+	{
+		window.alert(" Enter the EmpCode");
+		return false;
+	}
+	if (i2=="")
+	{
+		window.alert(" Enter the EmpName");
+		return false;
+	}
+	if (i3=="")
+	{
+		window.alert(" Enter the Department ");
+		return false;
+	}
+	if (i4=="")
+	{
+		window.alert(" Enter the Role ");
+		return false;
+	}
+	if (m1=="")
+	{
+		window.alert(" Enter the Mail ");
+		return false;
+	}
+	if (m2=="")
+	{
+		window.alert(" Renter the mail ");
+		return false;
+	}
+	if(m1!=m2)
+	{
+		window.alert("Mailid doesn't match");
+		document.fin1.rmail.value="";
+		return false;
+
+	}
+	return true;
+		
+}
+</script>
+</head>
+<body background="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\asset\ma.jpg" >
+<form name=fin1 action="emp.jsp" method="get" onSubmit="return check()">
+<table border=0 width="99%">
+<tr>
+<td align=middle bgColor="#006262"" height=103 
+    style="WIDTH: 100%; HEIGHT: 30px" vAlign=center width="100%">
+	<b><font color=white face=Arial size=4>Employee Master</font></b></td></tr>
+</table>
+<p>
+<table border=0 width="99%">
+<tr><td>            </td></tr>
+
+<tr>
+<td height=40><b><font color=black face=Arial size=2>EmpCode </font></td><td><input type="text" name="ecod" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>EmpName :  </font></td><td><input type="text" name="ename" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Mail </font></td><td><input type="text" name="mail" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Reenter Mail :</font></td><td><input type="text" name="rmail" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Department </font></td><td><input type="text" name="dept" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Company :</font></td><td><input type="text" name="cmp" value="ARBL"/></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Role </font></td><td><input type="text" name="role"  /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Type</font></td><td>
+<select name="type" >
+			<option value="Reg" selected>Reg
+			<option value="Temp">Temp
+			<option value="Chnl">Chnl
+</select></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2></font></td><td><input type="submit" name="save" value="               Save     "/></b></td>
+<td height=40><input type="reset" name="dat" value="                Clear     "/></b></td>
+</tr>
+</p>
+</form>
+</body>
+</html>

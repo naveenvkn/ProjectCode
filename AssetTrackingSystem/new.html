@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>New Allocation</title>
+<script Language="JavaScript">
+function check()
+{
+	var i1=document.fin.mno.value;
+	var i2=document.fin.ecode.value;
+	if (i1=="")
+	{
+		window.alert("Enter the Manf No.");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i1))
+		{
+			window.alert("Manf No. must be a number");
+			document.fin.mno.value="";
+			return false;
+		}
+	}
+	if (i2=="")
+	{
+		window.alert("Enter the Emp code.");
+		return false;
+	}
+	return true;
+}
+</script>
+</head>
+<body background="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\asset\ma.jpg" >
+<form name=fin action="new1.jsp" method="post" onSubmit="return check()">
+<table border=0 width="99%">
+<tr>
+<td align=middle bgColor="#006262" height=103 
+    style="WIDTH: 100%; HEIGHT: 30px" vAlign=center width="100%">
+	<b><font color=white face=Arial size=4>New Allocation</font></b></td></tr>
+</table>
+<p>
+<table border=0 width="60%" align="center">
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Manf SNo. </font><input type="text" name="mno" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>EmpCode. </font><input type="text" name="ecode" /></b></td></tr>
+</table>
+<center><input type="submit" name="save" value="     Select    "/>
+</center>
+</form>
+</body>
+</html>

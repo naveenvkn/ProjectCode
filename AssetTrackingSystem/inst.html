@@ -1,0 +1,266 @@
+<html>
+<head>
+<title>Instument Master</title>
+<script Language="JavaScript">
+function check()
+{
+	var i1=document.fin.imt.value;
+	var i2=document.fin.ast.value;
+	var i3=document.fin.des.value;
+	var i4=document.fin.make.value;
+	var i5=document.fin.mno.value;
+	var i6=document.fin.mdate.value;
+	var i7=document.fin.arbno.value;
+	var i8=document.fin.pdate.value;
+	var i9=document.fin.vno.value;
+	var i10=document.fin.vname.value;
+	var i11=document.fin.ival.value;
+	var i12=document.fin.idate.value;
+	var i13=document.fin.wper.value;
+	var i14=document.fin.cmon.value;
+	var i15=document.fin.brn.value;
+	var i16=document.fin.res.value;
+	var i17=document.fin.rno.value;
+	var i18=document.fin.dat.value;
+	for (var i =0; i < fin.elements.length; i++) 
+          {
+            if (fin.elements[i].value == "") 
+             {
+                 alert("Please Enter the values of All fields.");
+                 return false;
+             }
+          }   
+	if (i1=="")
+	{
+		window.alert(" Enter the IMTENo.");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i1))
+		{
+			window.alert("IMTENo. must be a number");
+			document.fin.imt.value="";
+			return false;
+		}
+	}
+	if (i2=="")
+	{
+		window.alert("Enter the Asset Type ");
+		return false;
+	}
+	if (i3=="")
+	{
+		window.alert("Enter the Instrument desc ");
+		return false;
+	}
+	if (i4=="")
+	{
+		window.alert("Enter the Instrument make");
+		return false;
+	}
+	if (i5=="")
+	{
+		window.alert("Enter the Manf No.");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i5))
+		{
+			window.alert("Manf No. must be a number");
+			document.fin.mno.value="";
+			return false;
+		}
+	}
+	if (i6=="")
+	{
+		window.alert("Enter the Manf Date");
+		return false;
+	}
+	if (i7=="")
+	{
+		window.alert("Enter the ARBLPRQNo. ");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i7))
+		{
+			window.alert("ARBLPRQNo. must be a number");
+			document.fin.arbno.value="";
+			return false;
+		}
+	}
+	if (i8=="")
+	{
+		window.alert("Enter the PRQ Date");
+		return false;
+	}
+	if (i9=="")
+	{
+		window.alert("Enter the Vendr Inv No ");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i9))
+		{
+			window.alert("Vendr Inv No must be a number");
+			document.fin.vno.value="";
+			return false;
+		}
+	}
+	if (i10=="")
+	{
+		window.alert("Enter the VendorName");
+		return false;
+	}
+	if (i11=="")
+	{
+		window.alert("Enter the Inv Value In Rs  ");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i11))
+		{
+			window.alert("Inv Value In Rs  must be a number");
+			document.fin.ival.value="";
+			return false;
+		}
+	}
+	if (i12=="")
+	{
+		window.alert("Enter the Inv Date");
+		return false;
+	}
+	if (i13=="")
+	{
+		window.alert("Enter the WarrantyPeriod ");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i13))
+		{
+			window.alert("WarrantyPeriod must be a number");
+			document.fin.wper.value="";
+			return false;
+		}
+	}
+	if (i14=="")
+	{
+		window.alert("Enter the Callib Months  ");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i14))
+		{
+			window.alert("Callib Months  must be a number");
+			document.fin.cmon.value="";
+			return false;
+		}
+	}
+	if (i15=="")
+	{
+		window.alert("Enter the BranchRecAssetOn ");
+		return false;
+	}
+	if (i16=="")
+	{
+		window.alert("Enter the Resolution ");
+		return false;
+	}
+	if (i17=="")
+	{
+		window.alert("Enter the Recvd.Vide Doc No  ");
+		return false;
+	}
+	else
+	{
+		if (isNaN(i17))
+		{
+			window.alert("Recvd.Vide Doc No must be a number");
+			document.fin.rno.value="";
+			return false;
+		}
+	}
+	if (i18=="")
+	{
+		window.alert("Enter the Recvd.Vide Doc Date ");
+		return false;
+	}
+	return true;
+}
+</script>
+</head>
+<body background="C:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\asset\ma.jpg" >
+<form name=fin action="ins.jsp" method="get" onSubmit="return check()" >
+<table border=0 width="99%">
+<tr>
+<td align=middle bgColor="#006262" height=103 
+    style="WIDTH: 100%; HEIGHT: 30px" vAlign=center width="100%">
+	<b><font color=white face=Arial size=4>Instrument Master</font></b></td></tr>
+</table>
+<p>
+<table border=0 width="99%">
+<tr>
+<td height=40><b><font color=black face=Arial size=2>IMTENo. </font></td><td><input type="text" name="imt" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Asset Type : </font></td><td>
+<select name="ast">
+			<option value="BETA METER" selected>BETA METER
+			<option value="BETA TESTER">BETA TESTER
+			<option value="CABLES">CABLES
+			<option value="CAMERA">CAMERA
+			<option value="DIGITAL CLAMP METER ">DIGITAL CLAMP METER
+			<option value="DIGITAL MULTI METER">DIGITAL MULTI METER
+			<option value="DVD">DVD
+			<option value="LOAD BANK">LOAD BANK
+			<option value="SHUNT">SHUNT
+			<option value="TEST ASSET">TEST ASSET
+			<option value="SOUND LEVEL METER">SOUND LEVEL METER
+	</select></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Instruent.Desc </font></td><td><textarea name="des" rows="2" cols="20"></textarea></b></td>
+<td height=40><b><font color=black face=Arial size=2>Instru.Make :  </font></td><td><input type="text" name="make" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Manf SNo. </font></td><td><input type="text" name="mno" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Manf   Date :<font color=black face=Arial size=1> (DD/MM/YYYY)</font></font></td><td><input type="text" name="mdate" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>ARBLPRQNo. </font></td><td><input type="text" name="arbno" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>PRQ    Date :<font color=black face=Arial size=1> (DD/MM/YYYY)</font></font></td><td><input type="text" name="pdate" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Vendr Inv No </font></td><td><input type="text" name="vno" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>VendorName : </font></td><td><input type="text" name="vname" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Inv Value In Rs </font></td><td><input type="text" name="ival" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Inv Date  :<font color=black face=Arial size=1> (DD/MM/YYYY)</font></font></td><td><input type="text" name="idate" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>WarrantyPeriod</font></td><td><input type="text" name="wper" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Callib Months :</font></td><td><input type="text" name="cmon" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>BranchRecAssetOn<font color=black face=Arial size=1> (DD/MM/YYYY)</font></font></td><td><input type="text" name="brn" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Resolution  :</font></td><td><input type="text" name="res" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2>Recvd.Vide Doc No </font></td><td><input type="text" name="rno" /></b></td>
+<td height=40><b><font color=black face=Arial size=2>Recvd.Vide Doc Date  :<font color=black face=Arial size=1> (DD/MM/YYYY)</font></font></td><td><input type="rdate" name="dat" /></b></td>
+</tr>
+<tr>
+<td height=40><b><font color=black face=Arial size=2></font></td><td><input type="submit" name="save" value="               Save     "/></b></td>
+<td height=40><input type="reset" name="dat" value="                Clear     "/></b></td>
+</tr>
+</table>
+</p>
+</form>
+</body>
+</html>
